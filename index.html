@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advisoria – Chiarisci cosa ti serve prima di scegliere un consulente</title>
+<style>
+:root{--bg:#F4F5FA;--surface:#FFFFFF;--ink:#1A1A2E;--muted:#5A5F78;--indigo:#2E2A5C;--teal:#1F8A7D;--line:#D5D8E6;--on-indigo:#FFFFFF;--err:#A32D2D;
+--head:"Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121324;--surface:#1B1D33;--ink:#EDEEF7;--muted:#A5A9C4;--indigo:#B9B4F0;--teal:#5CCBBB;--line:#34375A;--on-indigo:#121324;--err:#F08A8A}}
+:root[data-theme="dark"]{--bg:#121324;--surface:#1B1D33;--ink:#EDEEF7;--muted:#A5A9C4;--indigo:#B9B4F0;--teal:#5CCBBB;--line:#34375A;--on-indigo:#121324;--err:#F08A8A}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 var(--sans)}
+.wrap{max-width:680px;margin:0 auto;padding:0 22px 4rem}
+.brand{font:700 1.35rem var(--head);color:var(--indigo);padding:22px 0 0}
+h1{font:700 clamp(2rem,6.4vw,3.2rem)/1.08 var(--head);letter-spacing:-.02em;color:var(--indigo);margin:2.6rem 0 1.1rem}
+h2{font:700 1.55rem/1.2 var(--head);color:var(--indigo);margin:0 0 .6rem}
+h3{font:700 1.2rem/1.3 var(--head);color:var(--indigo);margin:2rem 0 .5rem}
+p{margin:.5rem 0}
+.lead{color:var(--muted);font-size:1.12rem;max-width:34em}
+.small{color:var(--muted);font-size:.9rem}
+button{font:600 1rem var(--sans);min-height:48px;padding:.8rem 1.4rem;border-radius:999px;cursor:pointer}
+.primary{background:var(--indigo);color:var(--on-indigo);border:2px solid var(--indigo)}
+.primary:disabled{opacity:.4;cursor:not-allowed}
+.sec{background:transparent;color:var(--indigo);border:2px solid var(--line)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.hero-cta{margin:1.8rem 0 .6rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 22px;margin-top:2rem}
+.segs{display:flex;gap:4px;margin:.5rem 0 1.5rem}
+.segs i{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.segs i.on{background:var(--teal)}
+fieldset{border:0;padding:0;margin:0}
+legend{font:700 1.5rem/1.25 var(--head);padding:0;margin-bottom:.9rem}
+.opt{display:flex;gap:.85rem;align-items:flex-start;padding:.85rem 1rem;border:1px solid var(--line);border-radius:10px;margin:.5rem 0;cursor:pointer}
+.opt:has(input:checked){border-color:var(--indigo);box-shadow:inset 0 0 0 1px var(--indigo);background:var(--bg)}
+.opt input{margin-top:.28rem;width:1.15rem;height:1.15rem;accent-color:var(--indigo)}
+input[type=text],input[type=email],input[type=tel]{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;min-height:48px}
+.err{color:var(--err);min-height:1.4em;font-size:.95rem}
+.nav{display:flex;gap:.8rem;margin-top:1.2rem}
+dl.sum{margin:.8rem 0}
+dl.sum div{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;padding:.7rem 0;border-top:1px solid var(--line)}
+dl.sum dt{color:var(--muted);font-size:.95rem}
+dl.sum dd{margin:0;font-weight:500}
+ul.todo,ul.plain{list-style:none;padding:0;margin:.8rem 0}
+ul.todo li{padding:.8rem 0;border-top:1px solid var(--line)}
+ul.todo strong{display:block}
+ul.todo span{color:var(--muted);font-size:.97rem}
+ul.plain li{padding:.25rem 0 .25rem 1.3rem;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.85rem;width:.6rem;height:2px;background:var(--teal)}
+form label{display:block;margin:.9rem 0 .3rem;font-weight:500}
+form label.consent{display:flex;gap:.7rem;align-items:flex-start;font-weight:400;font-size:.95rem}
+.consent input{margin-top:.3rem;width:1.1rem;height:1.1rem;accent-color:var(--indigo)}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+[hidden]{display:none!important}
+@media (max-width:520px){dl.sum div{grid-template-columns:1fr;gap:.1rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">Advisoria</div>
+
+  <section id="hero">
+    <h1>Prima di scegliere un consulente, chiarisci cosa ti serve.</h1>
+    <p class="lead">Dieci domande per mettere a fuoco la tua situazione. Ricevi un riepilogo con i temi da affrontare al primo incontro e i documenti da portare.</p>
+    <div class="hero-cta"><button class="primary" id="start">Inizia</button></div>
+    <p class="small">Circa quattro minuti. Non è una proposta di investimento e non ti impegna a nulla. Le risposte restano sul tuo dispositivo finché non decidi di inviarle.</p>
+  </section>
+
+  <section id="wizard" class="panel" hidden>
+    <div class="small" id="count"></div>
+    <div class="segs" id="segs"></div>
+    <div id="q"></div>
+    <div class="nav">
+      <button class="sec" id="back" type="button">Indietro</button>
+      <button class="primary" id="next" type="button">Avanti</button>
+    </div>
+  </section>
+
+  <section id="result" hidden></section>
+
+  <footer class="small">Questo questionario serve a orientare il primo colloquio: non è una raccomandazione di investimento, non sostituisce la profilazione prevista dalla normativa e non promette risultati.</footer>
+</div>
+
+<script>
+const CONTACT_EMAIL = "n.antonello@icloud.com"; // usato solo se FORM_ENDPOINT è vuoto
+const FORM_ENDPOINT = ""; // incolla qui l'indirizzo del modulo, es. https://formspree.io/f/xxxxxxxx
+const $ = s => document.querySelector(s);
+const el = (t, txt, c) => { const e = document.createElement(t); if (txt) e.textContent = txt; if (c) e.className = c; return e; };
+
+const Q = [
+  {id:"motivo", t:"Cosa ti porta a cercare un consulente?", opts:[["liquidita","Ho risparmi fermi sul conto"],["pensione","Voglio pianificare la pensione"],["evento","Ho ricevuto una somma importante (eredità, liquidazione, vendita)"],["seguito","Ho già degli investimenti, ma nessuno mi segue"],["famiglia","Voglio proteggere il patrimonio e pensare alla famiglia"]]},
+  {id:"eta", t:"Quanti anni hai?", opts:[["u35","Meno di 35"],["u50","Tra 35 e 49"],["u65","Tra 50 e 64"],["o65","65 o più"]]},
+  {id:"patr", t:"Quanto hai da parte in totale, tra liquidità e investimenti?", h:"Non contare la casa in cui vivi.", opts:[["p1","Meno di 50.000 €"],["p2","Tra 50.000 e 150.000 €"],["p3","Tra 150.000 e 500.000 €"],["p4","Tra 500.000 € e 1,5 milioni"],["p5","Più di 1,5 milioni"]]},
+  {id:"dove", t:"Dove si trovano oggi i tuoi risparmi?", opts:[["conto","Soprattutto sul conto corrente o in depositi"],["banca","In prodotti della mia banca (fondi, gestioni, polizze)"],["autonomo","In titoli o ETF che gestisco da solo"],["immobili","Soprattutto in immobili"],["misto","Un po' di tutto"]]},
+  {id:"esper", t:"Che esperienza hai con gli investimenti?", opts:[["nessuna","Nessuna"],["poca","Ho qualche fondo o obbligazione"],["molta","Investo da anni per conto mio"]]},
+  {id:"orizz", t:"Tra quanto ti serviranno questi soldi?", opts:[["breve","Meno di 3 anni"],["medio","Tra 3 e 10 anni"],["lungo","Oltre 10 anni"]]},
+  {id:"obiett", t:"Qual è l'obiettivo principale?", opts:[["protezione","Proteggere quello che ho"],["reddito","Ottenere un reddito periodico"],["crescita","Far crescere il capitale nel tempo"],["successione","Pianificare il passaggio ai familiari"]]},
+  {id:"suppo", t:"Come vorresti essere seguito?", opts:[["consulenza","Mi confronto con il consulente, ma decido io"],["delega","Preferisco delegare la gestione"],["periodico","Un controllo periodico di quello che ho"],["boh","Non lo so ancora"]]},
+  {id:"preocc", t:"Cosa ti preoccupa di più?", opts:[["perdita","Perdere parte del capitale"],["costi","Costi e commissioni"],["capire","Non capire cosa ho"],["tasse","Tasse e fiscalità"],["inflazione","Che l'inflazione consumi i risparmi"]]},
+  {id:"quando", t:"Quando vorresti iniziare?", opts:[["subito","Subito"],["tre","Entro tre mesi"],["valuto","Sto solo valutando"]]}
+];
+let step = 0;
+const a = {};
+const key = id => Q.find(q => q.id === id).opts[a[id]][0];
+const lab = id => Q.find(q => q.id === id).opts[a[id]][1];
+
+function sync() {
+  $("#next").disabled = a[Q[step].id] === undefined;
+  $("#next").textContent = step === Q.length - 1 ? "Vedi il riepilogo" : "Avanti";
+  $("#back").hidden = step === 0;
+}
+function renderQ() {
+  const q = Q[step], box = $("#q");
+  box.replaceChildren();
+  $("#count").textContent = "Domanda " + (step + 1) + " di " + Q.length;
+  const sg = $("#segs"); sg.replaceChildren();
+  Q.forEach((_, i) => sg.append(el("i", null, i <= step ? "on" : "")));
+  const fs = el("fieldset"); fs.append(el("legend", q.t));
+  if (q.h) fs.append(el("p", q.h, "small"));
+  q.opts.forEach(([v, t], i) => {
+    const l = el("label", null, "opt"), r = el("input");
+    r.type = "radio"; r.name = "c"; r.checked = a[q.id] === i;
+    r.onchange = () => { a[q.id] = i; sync(); };
+    l.append(r, el("span", t)); fs.append(l);
+  });
+  box.append(fs); sync();
+}
+
+function themes() {
+  const t = [], k = id => key(id);
+  if (k("dove") === "conto" || k("motivo") === "liquidita") t.push(["Come usare la liquidità ferma", "Quanto tenere come riserva per gli imprevisti e quanto destinare a obiettivi con scadenze diverse."]);
+  if (k("motivo") === "evento") t.push(["Come gestire una somma arrivata tutta insieme", "Non c'è fretta: prima si definiscono obiettivi e tempi, poi si decide come e quando investire."]);
+  if (k("motivo") === "pensione") t.push(["Il quadro pensionistico", "Stima della pensione pubblica, eventuale previdenza complementare e differenza da colmare."]);
+  if (k("obiett") === "reddito") t.push(["Quale reddito serve davvero", "Quanto ti serve ogni anno e da quando, prima di parlare di strumenti."]);
+  if (k("obiett") === "successione" || k("motivo") === "famiglia") t.push(["Il passaggio ai familiari", "Testamento, donazioni e intestazioni: qui conviene affiancare notaio e commercialista al consulente."]);
+  if (k("esper") === "nessuna" || k("preocc") === "capire") t.push(["Capire cosa si possiede", "Chiedi che ogni scelta ti venga spiegata in modo semplice, con i rischi detti chiaramente."]);
+  if (k("preocc") === "costi" || k("dove") === "banca") t.push(["Trasparenza sui costi", "Chiedi per iscritto tutti i costi (di ingresso, di gestione, di uscita) e un confronto con le alternative."]);
+  if (k("preocc") === "tasse") t.push(["Fiscalità", "Come le scelte cambiano le imposte su rendimenti e successione."]);
+  if (k("preocc") === "perdita" || k("orizz") === "breve") t.push(["Tempi e possibili perdite", "Con un orizzonte breve o poca tolleranza alle perdite, la priorità è chiarire quando ti servono i soldi. Il profilo di rischio formale si compila in consulenza."]);
+  if (k("preocc") === "inflazione") t.push(["Potere d'acquisto", "Come mantenere il valore dei risparmi nel tempo senza rinunciare alla liquidità che serve."]);
+  if (!t.length) t.push(["Obiettivi e tempi", "Mettere per iscritto cosa vuoi ottenere e quando, prima di parlare di strumenti."]);
+  return t.slice(0, 5);
+}
+
+function showResult() {
+  const sec = $("#result"), th = themes();
+  const rows = [["Cosa ti porta qui", lab("motivo")], ["Risparmi", lab("patr")], ["Oggi si trovano", lab("dove")], ["Orizzonte", lab("orizz")], ["Obiettivo", lab("obiett")], ["Supporto cercato", lab("suppo")]];
+  sec.replaceChildren();
+  const box = el("div", null, "panel");
+  box.append(el("h2", "Il tuo punto di partenza"));
+  const dl = el("dl", null, "sum");
+  rows.forEach(([d, v]) => { const r = el("div"); r.append(el("dt", d), el("dd", v)); dl.append(r); });
+  box.append(dl, el("h3", "Di cosa parlare al primo incontro"));
+  const ul = el("ul", null, "todo");
+  th.forEach(([h, s]) => { const li = el("li"); li.append(el("strong", h), el("span", s)); ul.append(li); });
+  box.append(ul, el("h3", "Cosa portare"));
+  const pl = el("ul", null, "plain");
+  ["Estratti conto e elenco di investimenti e polizze", "Un elenco di immobili e di eventuali finanziamenti", "I tuoi obiettivi, con le date approssimative", "Le domande che ti preoccupano"].forEach(x => pl.append(el("li", x)));
+  box.append(pl, el("h3", "Come scegliere a chi rivolgerti"));
+  box.append(el("p", "Verifica sempre che il consulente sia iscritto all'Albo unico dei consulenti finanziari tenuto dall'OAM, e chiedi di conoscere per iscritto come viene pagato."));
+  box.append(el("h3", "Vuoi parlarne con una persona?"));
+  box.append(el("p", FORM_ENDPOINT ? "Lascia un recapito e ti ricontatteremo per fissare un incontro." : "Lascia un recapito: si aprirà il tuo programma di posta con il riepilogo già scritto, da inviare quando vuoi."));
+  const f = el("form"); f.id = "cf";
+  f.innerHTML = '<label for="n">Nome</label><input id="n" type="text" autocomplete="name" required>' +
+    '<label for="m">Email</label><input id="m" type="email" autocomplete="email" required>' +
+    '<label for="t">Telefono (facoltativo)</label><input id="t" type="tel" autocomplete="tel">' +
+    '<label class="consent"><input id="c" type="checkbox" required><span>Acconsento al trattamento dei miei dati per essere ricontattato in merito a questa richiesta.</span></label>' +
+    '<div class="nav"><button class="primary" type="submit">Richiedi un incontro</button><button class="sec" type="button" id="again">Ricomincia</button></div>' +
+    '<div class="err" id="cerr" role="alert"></div>';
+  box.append(f); sec.append(box);
+  $("#wizard").hidden = true; sec.hidden = false;
+  sec.scrollIntoView({block: "start"});
+  $("#again").onclick = () => { for (const x in a) delete a[x]; step = 0; sec.hidden = true; $("#wizard").hidden = false; renderQ(); window.scrollTo(0, 0); };
+  f.onsubmit = async ev => {
+    ev.preventDefault();
+    const body = ["Nome: " + $("#n").value, "Email: " + $("#m").value, "Telefono: " + $("#t").value, ""]
+      .concat(rows.map(([d, v]) => d + ": " + v)).concat(["Quando: " + lab("quando"), "Preoccupazione principale: " + lab("preocc"), "Esperienza: " + lab("esper"), "Età: " + lab("eta")]).join("\n");
+    if (FORM_ENDPOINT) {
+      const btn = f.querySelector("button[type=submit]"); btn.disabled = true; $("#cerr").textContent = "";
+      try {
+        const r = await fetch(FORM_ENDPOINT, {method: "POST", headers: {"Content-Type": "application/json", "Accept": "application/json"},
+          body: JSON.stringify({name: $("#n").value, email: $("#m").value, phone: $("#t").value, message: body, _subject: "Richiesta di incontro"})});
+        if (!r.ok) throw new Error("invio non riuscito");
+        f.replaceChildren(el("p", "Grazie, abbiamo ricevuto la tua richiesta. Ti ricontatteremo al più presto."));
+      } catch (e) { btn.disabled = false; $("#cerr").textContent = "Non siamo riusciti a inviare la richiesta. Riprova tra poco."; }
+      return;
+    }
+    if (!CONTACT_EMAIL) { $("#cerr").textContent = "L'indirizzo di contatto non è configurato."; return; }
+    location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Richiesta di incontro") + "&body=" + encodeURIComponent(body);
+  };
+}
+
+$("#start").onclick = () => { $("#hero").hidden = true; $("#wizard").hidden = false; renderQ(); window.scrollTo(0, 0); };
+$("#back").onclick = () => { if (step > 0) { step--; renderQ(); } };
+$("#next").onclick = () => { if (a[Q[step].id] === undefined) return; if (step < Q.length - 1) { step++; renderQ(); } else showResult(); };
+</script>
+</body>
+</html>
