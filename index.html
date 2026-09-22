@@ -59,7 +59,14 @@ footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line)}
 </head>
 <body>
 <div class="wrap">
-  <div class="brand">Advisoria</div>
+  <div class="brand" aria-label="Advisoria">
+    <svg width="150" height="46" viewBox="0 0 420 130" role="img">
+      <text x="6" y="90" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="62" fill="var(--indigo)">Advisor</text>
+      <text x="292" y="90" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="62" fill="var(--indigo)">a</text>
+      <circle cx="274" cy="26" r="11" fill="var(--teal)"/>
+      <rect x="268.5" y="42" width="11" height="42" fill="var(--indigo)"/>
+    </svg>
+  </div>
 
   <section id="hero">
     <h1>Prima di scegliere un consulente, chiarisci cosa ti serve.</h1>
@@ -80,7 +87,7 @@ footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line)}
 
   <section id="result" hidden></section>
 
-  <footer class="small">Questo questionario serve a orientare il primo colloquio: non è una raccomandazione di investimento, non sostituisce la profilazione prevista dalla normativa e non promette risultati.</footer>
+  <footer class="small">Questo questionario serve a orientare il primo colloquio: non è una raccomandazione di investimento, non sostituisce la profilazione prevista dalla normativa e non promette risultati. <a href="privacy.html">Informativa privacy</a>.</footer>
 </div>
 
 <script>
@@ -166,7 +173,7 @@ function showResult() {
   f.innerHTML = '<label for="n">Nome</label><input id="n" type="text" autocomplete="name" required>' +
     '<label for="m">Email</label><input id="m" type="email" autocomplete="email" required>' +
     '<label for="t">Telefono (facoltativo)</label><input id="t" type="tel" autocomplete="tel">' +
-    '<label class="consent"><input id="c" type="checkbox" required><span>Acconsento al trattamento dei miei dati per essere ricontattato in merito a questa richiesta.</span></label>' +
+    '<label class="consent"><input id="c" type="checkbox" required><span>Ho letto l\'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a> e acconsento al trattamento dei miei dati per essere ricontattato in merito a questa richiesta.</span></label>' +
     '<div class="nav"><button class="primary" type="submit">Richiedi un incontro</button><button class="sec" type="button" id="again">Ricomincia</button></div>' +
     '<div class="err" id="cerr" role="alert"></div>';
   box.append(f); sec.append(box);
